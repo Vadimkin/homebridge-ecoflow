@@ -83,7 +83,6 @@ web_modules/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 !.github/actions/**/node_modules/**/dist
 
 # Gatsby files

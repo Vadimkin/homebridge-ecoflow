@@ -1,0 +1,31 @@
+import { Delta2Configuration } from '@ecoflow/accessories/batteries/delta2/interfaces/delta2Configuration';
+import { Delta2AllQuotaData } from '@ecoflow/accessories/batteries/delta2/interfaces/delta2HttpApiContracts';
+import { EcoFlowAccessoryWithQuotaBase } from '@ecoflow/accessories/ecoFlowAccessoryWithQuotaBase';
+import { EcoFlowHttpApiManager } from '@ecoflow/apis/ecoFlowHttpApiManager';
+import { EcoFlowMqttApiManager } from '@ecoflow/apis/ecoFlowMqttApiManager';
+import { MqttQuotaMessage } from '@ecoflow/apis/interfaces/mqttApiContracts';
+import { DeviceConfig } from '@ecoflow/config';
+import { EcoFlowHomebridgePlatform } from '@ecoflow/platform';
+import { ServiceBase } from '@ecoflow/services/serviceBase';
+import { Logging, PlatformAccessory } from 'homebridge';
+export declare abstract class Delta2AccessoryBase extends EcoFlowAccessoryWithQuotaBase<Delta2AllQuotaData> {
+    private readonly batteryStatusService;
+    private readonly outletUsbService;
+    private readonly outletAcService;
+    private readonly outletCarService;
+    private readonly switchXboostService;
+    constructor(platform: EcoFlowHomebridgePlatform, accessory: PlatformAccessory, config: DeviceConfig, log: Logging, httpApiManager: EcoFlowHttpApiManager, mqttApiManager: EcoFlowMqttApiManager, configuration: Delta2Configuration);
+    protected getServices(): ServiceBase[];
+    protected processQuotaMessage(message: MqttQuotaMessage): void;
+    protected initializeQuota(quota: Delta2AllQuotaData | null): Delta2AllQuotaData;
+    protected updateInitialValues(initialData: Delta2AllQuotaData): void;
+    private updateBmsInitialValues;
+    private updateInvInitialValues;
+    private updatePdInitialValues;
+    private updateMpptInitialValues;
+    private updateBmsValues;
+    private updateInvValues;
+    private updatePdValues;
+    private updateMpptValues;
+    private updateAcValues;
+}

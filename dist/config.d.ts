@@ -6,6 +6,7 @@ export interface EcoFlowConfig extends PlatformConfig {
 export declare enum DeviceModel {
     Delta2Max = "Delta 2 Max",
     Delta2 = "Delta 2",
+    DeltaPro = "Delta Pro",
     PowerStream = "PowerStream"
 }
 export declare enum LocationType {

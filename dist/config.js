@@ -5,7 +5,7 @@ var DeviceModel;
 (function (DeviceModel) {
     DeviceModel["Delta2Max"] = "Delta 2 Max";
     DeviceModel["Delta2"] = "Delta 2";
-    // DeltaPro = 'Delta Pro',
+    DeviceModel["DeltaPro"] = "Delta Pro";
     // DeltaProUltra = 'Delta Pro Ultra',
     DeviceModel["PowerStream"] = "PowerStream";
 })(DeviceModel || (exports.DeviceModel = DeviceModel = {}));

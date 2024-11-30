@@ -61,7 +61,7 @@ describe('PluginConfigDevicesRenderer', () => {
       title: 'Model',
       default: 'Delta 2',
       required: true,
-      enum: ['Delta 2', 'Delta 2 Max', 'PowerStream'],
+      enum: ['Delta 2', 'Delta 2 Max', 'PowerStream', 'Delta Pro'],
     };
     const batterySchema = {
       properties: {

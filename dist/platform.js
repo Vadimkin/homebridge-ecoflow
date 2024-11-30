@@ -3,7 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EcoFlowHomebridgePlatform = void 0;
 const delta2Accessory_1 = require("@ecoflow/accessories/batteries/delta2/delta2Accessory");
 const delta2MaxAccessory_1 = require("@ecoflow/accessories/batteries/delta2/delta2MaxAccessory");
+const deltaProAccessory_1 = require("@ecoflow/accessories/batteries/deltapro/deltaProAccessory");
 const delta2Simulator_1 = require("@ecoflow/accessories/batteries/delta2/simulations/delta2Simulator");
+const deltaProSimulator_1 = require("@ecoflow/accessories/batteries/deltapro/simulations/deltaProSimulator");
 const powerStreamAccessory_1 = require("@ecoflow/accessories/powerstream/powerStreamAccessory");
 const powerStreamSimulator_1 = require("@ecoflow/accessories/powerstream/simulations/powerStreamSimulator");
 const ecoFlowHttpApiManager_1 = require("@ecoflow/apis/ecoFlowHttpApiManager");
@@ -167,10 +169,10 @@ class EcoFlowHomebridgePlatform {
                 EcoFlowAccessoryType = delta2Accessory_1.Delta2Accessory;
                 EcoFlowAccessorySimulatorType = delta2Simulator_1.Delta2Simulator;
                 break;
-            // case DeviceModel.DeltaPro:
-            //  EcoFlowAccessoryType = DeltaProAccessory;
-            //  EcoFlowAccessorySimulatorType = DeltaProSimulator;
-            //  break;
+            case config_1.DeviceModel.DeltaPro:
+                EcoFlowAccessoryType = deltaProAccessory_1.DeltaProAccessory;
+                EcoFlowAccessorySimulatorType = deltaProSimulator_1.DeltaProSimulator;
+                break;
             // case DeviceModel.DeltaProUltra:
             //   EcoFlowAccessoryType = DeltaProUltraAccessory;
             //   EcoFlowAccessorySimulatorType = DeltaProUltraSimulator;

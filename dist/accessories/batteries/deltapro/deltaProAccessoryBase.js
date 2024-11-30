@@ -32,17 +32,16 @@ class DeltaProAccessoryBase extends ecoFlowAccessoryWithQuotaBase_1.EcoFlowAcces
         ];
     }
     processQuotaMessage(message) {
-        console.error('processQuotaMessage', message);
         const data = message.data;
-        if (data.bmsMaster !== undefined && Object.keys(data.bmsMaster).length > 0) {
+        if (data && data.bmsMaster !== undefined && Object.keys(data.bmsMaster).length > 0) {
             Object.assign(this.quota.bmsMaster, data.bmsMaster);
             this.updateBmsValues(data.bmsMaster);
         }
-        if (data.inv !== undefined && Object.keys(data.inv).length > 0) {
+        if (data && data.inv !== undefined && Object.keys(data.inv).length > 0) {
             Object.assign(this.quota.inv, data.inv);
             this.updateInvValues(data.inv);
         }
-        if (data.pd !== undefined && Object.keys(data.pd).length > 0) {
+        if (data && data.pd !== undefined && Object.keys(data.pd).length > 0) {
             Object.assign(this.quota.pd, data.pd);
             this.updatePdValues(data.pd);
         }

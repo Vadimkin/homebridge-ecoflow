@@ -58,6 +58,7 @@ export abstract class DeltaProAccessoryBase extends EcoFlowAccessoryWithQuotaBas
   }
 
   protected override processQuotaMessage(message: MqttQuotaMessage): void {
+    console.error('processQuotaMessage', message);
     const data = (message as DeltaProMqttQuotaMessageWithParams<DeltaProAllQuotaData>).data;
     if (data.bmsMaster !== undefined && Object.keys(data.bmsMaster).length > 0) {
       Object.assign(this.quota.bmsMaster, data.bmsMaster);
